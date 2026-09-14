@@ -115,7 +115,7 @@ const token = await getToken();
 const [products, sold] = await Promise.all([allProducts(token), salesLastEightWeeks(token)]);
 const dashboardData = makeDashboardData(products, sold);
 const encoded = gzipSync(JSON.stringify(dashboardData)).toString("base64");
-const file = new URL("../index.html", import.meta.url);
+const file = new URL("./index.html", import.meta.url);
 const html = await fs.readFile(file, "utf8");
 const marker = /const CATALOG_GZIP='[^']*';/;
 if (!marker.test(html)) throw new Error("No se encontró CATALOG_GZIP en index.html");
