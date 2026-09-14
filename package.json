@@ -1,0 +1,6 @@
+{
+  "name": "velour-production-dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {"update": "node scripts/update-shopify.mjs"}
+}
